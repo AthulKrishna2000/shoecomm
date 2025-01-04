@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:shoecomm/controllers/length_controller.dart';
+import 'package:shoecomm/utils/app_const.dart';
 
 import 'package:shoecomm/widget/admin_drawer_widget.dart';
 
@@ -13,6 +14,7 @@ class AdminMainScreen extends StatelessWidget {
     final LengthController lengthController = Get.put(LengthController());
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppConstant.appMainColor,
         title: const Text("Admin panel"),
       ),
       drawer: const AdminDrawerWidget(),
@@ -24,23 +26,29 @@ class AdminMainScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Total numbers of users : ${lengthController.totalusers}",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                  "Total numbers of products : ${lengthController.totalProducts}"),
+                "Total numbers of products : ${lengthController.totalProducts}",
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                  "Total numbers of categories : ${lengthController.totalcategory}"),
+                "Total numbers of categories : ${lengthController.totalcategory}",
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                  "Total numbers of orders : ${lengthController.totalOrders}"),
+                "Total numbers of orders : ${lengthController.totalOrders}",
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
