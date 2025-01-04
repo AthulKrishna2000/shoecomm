@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "99191920886",
+    "project_id": "shoecomm-80157",
+    "storage_bucket": "shoecomm-80157.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99191920886:android:501e2e1a5c6b3a00e7f4d7",
+        "android_client_info": {
+          "package_name": "com.example.shoecomm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfVB_iTJTFawAMjRU5xVPMSvXsyJWeTeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
