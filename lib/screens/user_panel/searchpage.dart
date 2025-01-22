@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shoecomm/screens/models/product_mpdel.dart';
+import 'package:shoecomm/screens/user_panel/product_details_screen.dart';
 import 'package:shoecomm/utils/app_const.dart';
 
 class Searchpage extends StatefulWidget {
@@ -77,14 +80,30 @@ class _SearchpageState extends State<Searchpage> {
       body: ListView.builder(
         itemCount: resultsList.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-              radius: 30,
-              backgroundImage:
-                  NetworkImage(resultsList[index]['productImages'][0]),
+          ProductModel productModel = ProductModel(
+              productId: resultsList[index]['productId'],
+              categoryId: resultsList[index]['categoryId'],
+              productName: resultsList[index]['productName'],
+              categoryName: resultsList[index]['categoryName'],
+              salePrice: resultsList[index]['salePrice'],
+              fullPrice: resultsList[index]['fullPrice'],
+              productImages: resultsList[index]['productImages'],
+              deliveryTime: resultsList[index]['deliveryTime'],
+              isSale: resultsList[index]['isSale'],
+              productDescription: resultsList[index]['productDescription']);
+          return GestureDetector(
+            onTap: () {
+              Get.to(ProductDetailsScreen(productModel: productModel));
+            },
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 30,
+                backgroundImage:
+                    NetworkImage(resultsList[index]['productImages'][0]),
+              ),
+              title: Text(resultsList[index]['productName']),
+              subtitle: Text("${resultsList[index]['fullPrice']} Rs"),
             ),
-            title: Text(resultsList[index]['productName']),
-            subtitle: Text("${resultsList[index]['fullPrice']} Rs"),
           );
         },
       ),

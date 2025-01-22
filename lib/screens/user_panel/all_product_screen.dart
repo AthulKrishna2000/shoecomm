@@ -26,7 +26,7 @@ class AllProductScreen extends StatelessWidget {
       body: FutureBuilder(
         future: FirebaseFirestore.instance
             .collection('products')
-            .where('isSale', isEqualTo: true)
+            .where('isSale', isEqualTo: false)
             .get(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {

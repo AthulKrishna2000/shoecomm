@@ -14,9 +14,11 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
-      create: (context) => mainScreenNotifier(), 
+      create: (context) => mainScreenNotifier(),
     ),
-    ChangeNotifierProvider(create: (context) => SizeController(),)
+    ChangeNotifierProvider(
+      create: (context) => SizeController(),
+    )
   ], child: const MyApp()));
 }
 
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
